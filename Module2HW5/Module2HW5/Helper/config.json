@@ -1,5 +1,10 @@
 ﻿{
-  "FolderPath": "C:\\Users\\qqg16\\RiderProjects\\Module2HW5\\Module2HW5\\Module2HW5\\bin\\Debug\\net5.0\\Logs\\",
-  "LogFilesCounter": 2,
-  "CountOfLogs": 100
+  "LogerConfig": {
+    "DirectoryCount": "3",
+    "FilePath": "Logs/",
+    "FileExtension": ".txt",
+    "NameFormat": "hh.mm.ss dd.MM.yyyy",
+    "TimeFormat": "hh:mm:ss dd.MM.yyyy",
+    "CountOfLogs": 100
+  }
 }
