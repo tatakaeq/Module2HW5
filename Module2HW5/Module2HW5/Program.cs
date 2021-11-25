@@ -1,12 +1,23 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
+using Module2HW5.Services;
+using Module2HW5.Services.Abstractions;
 
 namespace Module2HW5
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceProvider = new ServiceCollection()
+                .AddTransient<ILoger, Loger>()
+                .AddTransient<IFileService, FileService>()
+                .AddTransient<IConfigService, ConfigService>()
+                .AddTransient<Starter>()
+                .BuildServiceProvider();
+
+            var start = serviceProvider.GetService<Starter>();
+            start?.Run();
         }
     }
 }

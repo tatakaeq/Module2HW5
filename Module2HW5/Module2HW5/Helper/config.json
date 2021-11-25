@@ -1,0 +1,10 @@
+﻿{
+  "LogerConfig": {
+    "DirectoryCount": "3",
+    "FilePath": "Logs/",
+    "FileExtension": ".txt",
+    "NameFormat": "hh.mm.ss dd.MM.yyyy",
+    "TimeFormat": "hh:mm:ss dd.MM.yyyy",
+    "CountOfLogs": 100
+  }
+}
