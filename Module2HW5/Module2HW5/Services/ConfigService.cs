@@ -7,41 +7,19 @@ namespace Module2HW5.Services
 {
     public class ConfigService : IConfigService
     {
+        private const string Path = "config.json";
+        private Config _config;
         public ConfigService()
         {
-            Config = new Config();
-            LoadConfig();
+            ConfigInit();
         }
 
-        public Config Config { get; set; }
-        public void LoadConfig()
+        public Config Config => _config;
+
+        private void ConfigInit()
         {
-            var config = File.ReadAllText("config.json");
-            Config = JsonConvert.DeserializeObject<Config>(config);
-
-            if (Config.LogFilesCounter == 0)
-            {
-                Config.LogFilesCounter = 3;
-                SaveConfig();
-            }
-
-            if (Config.FolderPath == null)
-            {
-                Config.FolderPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
-                SaveConfig();
-            }
-
-            if (Config.CountOfLogs == 0)
-            {
-                Config.CountOfLogs = 100;
-                SaveConfig();
-            }
-        }
-
-        public void SaveConfig()
-        {
-            var json = JsonConvert.SerializeObject(Config);
-            File.WriteAllText("config.json", json);
+            var text = File.ReadAllText(Path);
+            _config = JsonConvert.DeserializeObject<Config>(text);
         }
     }
 }

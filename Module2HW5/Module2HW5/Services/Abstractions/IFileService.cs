@@ -2,12 +2,7 @@
 {
     public interface IFileService
     {
-        void Log(string log);
-        void StartWriter();
-        void StartWriter(string fileName);
-        string NameOfLogFile();
-        void EndWriter();
-        void EndWriter(IWriterService writerService);
-        void DeleteOldLog();
+        public void Init(string fileName, string fileExtension, string filePath, int count);
+        public void Log(string text);
     }
 }

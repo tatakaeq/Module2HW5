@@ -22,7 +22,7 @@ namespace Module2HW5
         public void Run()
         {
             var rnd = new Random();
-            for (var i = 0; i < _configService.Config.CountOfLogs; i++)
+            for (var i = 0; i < _configService.Config.LogerConfig.CountOfLogs; i++)
             {
                 try
                 {

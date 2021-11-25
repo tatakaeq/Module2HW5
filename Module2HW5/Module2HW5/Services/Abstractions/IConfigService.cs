@@ -4,8 +4,6 @@ namespace Module2HW5.Services.Abstractions
 {
     public interface IConfigService
     {
-        Config Config { get; set; }
-        void LoadConfig();
-        void SaveConfig();
+        public Config Config { get; }
     }
 }

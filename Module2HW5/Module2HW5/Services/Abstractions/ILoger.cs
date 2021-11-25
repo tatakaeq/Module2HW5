@@ -4,10 +4,9 @@ namespace Module2HW5.Services.Abstractions
 {
     public interface ILoger
     {
-        void LogInfo(string message);
-        void LogWarning(string message);
-        void LogError(string message);
-        void Log(LogType logType, string message);
-        void End();
+        public void Log(LogType type, string message);
+        public void LogError(string message);
+        public void LogWarning(string message);
+        public void LogInfo(string message);
     }
 }

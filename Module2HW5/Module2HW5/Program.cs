@@ -13,7 +13,6 @@ namespace Module2HW5
                 .AddTransient<ILoger, Loger>()
                 .AddTransient<IFileService, FileService>()
                 .AddTransient<IConfigService, ConfigService>()
-                .AddTransient<IWriterService, WriterService>()
                 .AddTransient<Starter>()
                 .BuildServiceProvider();
 
